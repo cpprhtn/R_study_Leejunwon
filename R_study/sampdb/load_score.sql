@@ -1,0 +1,1 @@
+LOAD DATA LOCAL INFILE "score.txt" INTO TABLE score;

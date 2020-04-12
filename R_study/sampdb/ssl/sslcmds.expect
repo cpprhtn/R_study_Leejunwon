@@ -1,0 +1,129 @@
+#!/usr/bin/expect
+# sslcmds.expect - run the sshcmds.sh script and supply answers for
+# all the prompts.
+
+# This is an Expect script. The answers it provides for the prompts
+# are the same as those used to generate the key and certificate files
+# that are supplied with the sampdb distribution.
+
+# You might want to edit the script under these circumstances:
+
+# - If the prompts printed by your version of OpenSSL are different,
+#   you can edit the "expect" strings. Some of the strings use patterns
+#   so that they match some of the variation in prompts that I have seen,
+#   but they might not match your version.
+# - To supply different responses to the prompts, you can edit the
+#   "send" strings.
+
+# Paul DuBois
+# paul@kitebird.com
+# 2004-08-28
+
+
+# Start the script that runs the OpenSSL commands
+
+spawn sh sslcmds.sh
+
+# Step 1. prompts for Certificate Authority (CA) key and certificate files
+
+expect -re "Enter.*pass phrase"
+send "capass\n"
+expect -re "Enter.*pass phrase"
+send "capass\n"
+expect "Country Name"
+send "US\n"
+expect "State or Province Name"
+send "WI\n"
+expect "Locality Name"
+send "Madison\n"
+expect "Organization Name"
+send "sampdb\n"
+expect "Organizational Unit Name"
+send "CA\n"
+expect "Common Name"
+send "sampdb\n"
+expect "Email Address"
+send "\n"
+
+# Step 2. prompts for server key and signing request files
+
+expect -re "Enter.*pass phrase"
+send "serverpass\n"
+expect -re "Enter.*pass phrase"
+send "serverpass\n"
+expect "Country Name"
+send "US\n"
+expect "State or Province Name"
+send "WI\n"
+expect "Locality Name"
+send "Madison\n"
+expect "Organization Name"
+send "sampdb\n"
+expect "Organizational Unit Name"
+send "server\n"
+expect "Common Name"
+send "sampdb\n"
+expect "Email Address"
+send "\n"
+expect "A challenge password"
+send "\n"
+expect "An optional company name"
+send "\n"
+
+# Step 3. prompts for removing passphrase from server key file
+
+expect -re "Enter.*pass phrase"
+send "serverpass\n"
+
+# Step 4. prompts for signing server certificate file
+
+expect -re "Enter.*pass phrase"
+send "capass\n"
+expect "Sign the certificate"
+send "y\n"
+expect "certified, commit"
+send "y\n"
+
+# Step 5. prompts for server key and signing request files
+
+expect -re "Enter.*pass phrase"
+send "clientpass\n"
+expect -re "Enter.*pass phrase"
+send "clientpass\n"
+expect "Country Name"
+send "US\n"
+expect "State or Province Name"
+send "WI\n"
+expect "Locality Name"
+send "Madison\n"
+expect "Organization Name"
+send "sampdb\n"
+expect "Organizational Unit Name"
+send "client\n"
+expect "Common Name"
+send "sampdb\n"
+expect "Email Address"
+send "\n"
+expect "A challenge password"
+send "\n"
+expect "An optional company name"
+send "\n"
+
+# Step 6. prompts for removing passphrase from server key file
+
+expect -re "Enter.*pass phrase"
+send "clientpass\n"
+
+# Step 7. prompts for signing server certificate file
+
+expect -re "Enter.*pass phrase"
+send "capass\n"
+expect "Sign the certificate"
+send "y\n"
+expect "certified, commit"
+send "y\n"
+
+# this has no purpose except to enable the rest of the script to be
+# be read and discarded
+
+expect "this will not be found"

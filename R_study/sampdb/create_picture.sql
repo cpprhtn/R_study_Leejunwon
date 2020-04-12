@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS picture;
+#@ _CREATE_TABLE_
+CREATE TABLE picture
+(
+  pict_id   INT NOT NULL PRIMARY KEY,
+  pict_data MEDIUMBLOB
+);
+#@ _CREATE_TABLE_

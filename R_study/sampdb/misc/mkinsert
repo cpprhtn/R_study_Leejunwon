@@ -1,0 +1,75 @@
+#!/usr/bin/perl
+# mkinsert
+
+# Generate INSERT statements from tab-delimited data, suitable for feeding
+# to mysql.  Useful if you have a file of data but an old version of MySQL
+# that doesn't support LOAD DATA LOCAL or mysqlimport --local.
+
+# Use mkinsert like this:
+
+# % mkinsert -t tbl_name data_file | mysql db_name
+
+# or:
+
+# % mkinsert -t tbl_name data_file > junk
+# <look at junk to see that it's what you want>
+# % mysql db_name < junk
+
+# This assumes the fields are in the proper order and that you don't want
+# load just a subset of the fields.
+
+# Also converts \N to NULL.
+
+# Paul DuBois
+# paul@kitebird.com
+# 1999-06-25
+
+# 1999-06-25
+# - Created.
+# 2002-06-15
+# - Don't assume "INTO" keyword is optional after "INSERT".
+
+use strict;
+use warnings;
+
+use vars qw($opt_t);
+use Getopt::Std;
+
+my ($prog, $usage);
+
+($prog = $0) =~ s|.*/||;    # get script name for messages
+
+$usage = "Usage: $prog -t tbl_name [ data-file ] ...";
+
+getopts ("t:") or die "$usage\n";
+defined ($opt_t) or die "$usage\n";
+
+my ($tbl_name) = $opt_t;
+my (@f);
+my ($delim);
+
+print "# feed the following output to mysql db_name\n\n";
+
+while (<>)
+{
+  chomp;
+  @f = split (/\t/, $_);
+  print "INSERT INTO $tbl_name VALUES(";
+  $delim = "";
+  foreach my $val (@f)
+  {
+    if ($val eq "\\N")
+    {
+      $val = "NULL";
+    }
+    else
+    {
+      $val =~ s/\\/\\\\/g;
+      $val =~ s/'/\\'/g;
+      $val = "'$val'";
+    }
+    print "$delim$val";
+    $delim = ",";
+  }
+  print ");\n";
+}

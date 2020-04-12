@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<changelog>
+<book>MySQL, Fifth Edition</book>
+<distribution-id>sampdb-5ed</distribution-id>
+<distribution-name>sampdb</distribution-name>
+<url>http://www.kitebird.com/mysql-book</url>
+<downloads>http://www.kitebird.com/mysql-book</downloads>
+
+
+<changeset>
+<version>1.00</version>
+<date>2013-04-06</date>
+
+<items>
+<item>
+Initial release.
+</item>
+</items>
+</changeset>
+
+</changelog>

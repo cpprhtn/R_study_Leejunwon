@@ -1,0 +1,357 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
+\else % if luatex or xelatex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{hyperref}
+\hypersetup{
+            pdftitle={unemployment\_rate},
+            pdfauthor={Junwon Lee},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\title{unemployment\_rate}
+\author{Junwon Lee}
+\date{3/24/2020}
+
+\begin{document}
+\maketitle
+
+\hypertarget{uxac00uxacf5uxb418uxc9c0-uxc54auxc740-uxb370uxc774uxd130}{%
+\section{가공되지 않은
+데이터}\label{uxac00uxacf5uxb418uxc9c0-uxc54auxc740-uxb370uxc774uxd130}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{raw_df}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    성별 연령계층별 X2019..09 X2019..10 X2019..11 X2019..12 X2020..01 X2020..02
+## 1    계         계       3.1       3.0       3.1       3.4       4.1       4.1
+## 2    계  15 - 19세       5.9       4.9       4.6       6.9      10.6       8.9
+## 3    계  20 - 29세       7.4       7.3       7.1       7.3       7.5       9.0
+## 4    계  30 - 39세       2.8       3.0       2.9       2.7       2.9       3.3
+## 5    계  40 - 49세       2.2       1.9       2.1       1.9       2.0       2.4
+## 6    계  50 - 59세       2.3       2.2       2.2       2.2       2.8       2.9
+## 7    계   60세이상       2.3       2.2       2.1       4.2       7.1       4.8
+## 8    계  15 - 64세       3.3       3.2       3.2       3.2       3.5       4.0
+## 9    계  15 - 24세       8.2       8.0       8.2       9.2       9.5      11.3
+## 10   계  15 - 29세       7.3       7.2       7.0       7.3       7.7       9.0
+## 11 남자         계       3.4       3.2       3.3       3.3       3.9       4.0
+## 12 남자  15 - 19세       5.5       6.1       5.9       7.6      11.3      12.0
+## 13 남자  20 - 29세       8.1       7.5       7.7       8.1       8.2       9.5
+## 14 남자  30 - 39세       3.1       3.3       3.1       2.4       2.4       3.1
+## 15 남자  40 - 49세       2.1       1.9       2.3       2.0       2.0       2.3
+## 16 남자  50 - 59세       2.6       2.4       2.5       2.2       2.9       3.1
+## 17 남자   60세이상       3.1       3.0       2.9       4.3       6.5       4.7
+## 18 남자  15 - 64세       3.5       3.4       3.4       3.3       3.5       3.9
+## 19 남자  15 - 24세       8.2       7.7       8.9       9.6      10.0      11.6
+## 20 남자  15 - 29세       8.0       7.4       7.7       8.0       8.4       9.6
+## 21 여자         계       2.8       2.8       2.7       3.4       4.4       4.2
+## 22 여자  15 - 19세       6.2       3.8       3.6       6.3      10.0       6.5
+## 23 여자  20 - 29세       6.7       7.1       6.5       6.5       6.8       8.5
+## 24 여자  30 - 39세       2.4       2.6       2.7       3.2       3.6       3.6
+## 25 여자  40 - 49세       2.3       1.9       1.9       1.8       2.0       2.5
+## 26 여자  50 - 59세       1.9       1.9       1.9       2.1       2.7       2.7
+## 27 여자   60세이상       1.2       1.2       1.2       4.1       7.9       4.8
+## 28 여자  15 - 64세       3.0       3.0       2.9       3.1       3.5       4.0
+## 29 여자  15 - 24세       8.2       8.2       7.7       8.9       9.0      11.0
+## 30 여자  15 - 29세       6.7       6.9       6.3       6.5       7.0       8.4
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{head}\NormalTok{(raw_df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   성별 연령계층별 X2019..09 X2019..10 X2019..11 X2019..12 X2020..01 X2020..02
+## 1   계         계       3.1       3.0       3.1       3.4       4.1       4.1
+## 2   계  15 - 19세       5.9       4.9       4.6       6.9      10.6       8.9
+## 3   계  20 - 29세       7.4       7.3       7.1       7.3       7.5       9.0
+## 4   계  30 - 39세       2.8       3.0       2.9       2.7       2.9       3.3
+## 5   계  40 - 49세       2.2       1.9       2.1       1.9       2.0       2.4
+## 6   계  50 - 59세       2.3       2.2       2.2       2.2       2.8       2.9
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{summary}\NormalTok{(raw_df)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    성별        연령계층별   X2019..09      X2019..10       X2019..11    
+##  계  :10   15 - 19세: 3   Min.   :1.20   Min.   :1.200   Min.   :1.200  
+##  남자:10   15 - 24세: 3   1st Qu.:2.45   1st Qu.:2.450   1st Qu.:2.550  
+##  여자:10   15 - 29세: 3   Median :3.20   Median :3.200   Median :3.150  
+##            15 - 64세: 3   Mean   :4.46   Mean   :4.273   Mean   :4.253  
+##            20 - 29세: 3   3rd Qu.:6.70   3rd Qu.:7.050   3rd Qu.:6.450  
+##            30 - 39세: 3   Max.   :8.20   Max.   :8.200   Max.   :8.900  
+##            (Other)  :12                                                 
+##    X2019..12       X2020..01        X2020..02     
+##  Min.   :1.800   Min.   : 2.000   Min.   : 2.300  
+##  1st Qu.:2.800   1st Qu.: 3.050   1st Qu.: 3.375  
+##  Median :3.750   Median : 5.450   Median : 4.450  
+##  Mean   :4.833   Mean   : 5.790   Mean   : 5.990  
+##  3rd Qu.:7.200   3rd Qu.: 8.125   3rd Qu.: 8.975  
+##  Max.   :9.600   Max.   :11.300   Max.   :12.000  
+## 
+\end{verbatim}
+
+\hypertarget{reshape}{%
+\section{Reshape}\label{reshape}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df_m <-}\StringTok{ }\KeywordTok{melt}\NormalTok{(raw_df, }\DataTypeTok{id.var =} \KeywordTok{c}\NormalTok{(}\StringTok{"성별"}\NormalTok{,}\StringTok{"연령계층별"}\NormalTok{))}
+\KeywordTok{head}\NormalTok{(df_m)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   성별 연령계층별  variable value
+## 1   계         계 X2019..09   3.1
+## 2   계  15 - 19세 X2019..09   5.9
+## 3   계  20 - 29세 X2019..09   7.4
+## 4   계  30 - 39세 X2019..09   2.8
+## 5   계  40 - 49세 X2019..09   2.2
+## 6   계  50 - 59세 X2019..09   2.3
+\end{verbatim}
+
+\hypertarget{cleaning}{%
+\section{Cleaning}\label{cleaning}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df_m}\OperatorTok{$}\NormalTok{year =}\StringTok{ }\KeywordTok{substr}\NormalTok{(df_m}\OperatorTok{$}\NormalTok{variable,}\DecValTok{2}\NormalTok{,}\DecValTok{5}\NormalTok{)}
+\NormalTok{df_m}\OperatorTok{$}\NormalTok{month =}\StringTok{ }\KeywordTok{substr}\NormalTok{(df_m}\OperatorTok{$}\NormalTok{variable,}\DecValTok{8}\NormalTok{,}\DecValTok{9}\NormalTok{)}
+\NormalTok{df_m}\OperatorTok{$}\NormalTok{year_month =}\StringTok{ }\KeywordTok{paste}\NormalTok{(df_m}\OperatorTok{$}\NormalTok{year, df_m}\OperatorTok{$}\NormalTok{month, }\DataTypeTok{sep =} \StringTok{"-"}\NormalTok{)}
+\NormalTok{df_m}\OperatorTok{$}\NormalTok{year_month =}\StringTok{ }\KeywordTok{as.Date}\NormalTok{(}\KeywordTok{paste}\NormalTok{(df_m}\OperatorTok{$}\NormalTok{year_month, }\StringTok{"-01"}\NormalTok{,}\DataTypeTok{sep =} \StringTok{""}\NormalTok{))}
+
+\NormalTok{df_select =}\StringTok{ }\NormalTok{df_m[,}\KeywordTok{c}\NormalTok{(}\StringTok{"성별"}\NormalTok{, }\StringTok{"연령계층별"}\NormalTok{, }\StringTok{"year_month"}\NormalTok{, }\StringTok{"value"}\NormalTok{)]}
+\KeywordTok{summary}\NormalTok{(df_select)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    성별        연령계층별   year_month             value       
+##  계  :60   15 - 19세:18   Min.   :2019-09-01   Min.   : 1.200  
+##  남자:60   15 - 24세:18   1st Qu.:2019-10-01   1st Qu.: 2.775  
+##  여자:60   15 - 29세:18   Median :2019-11-16   Median : 3.600  
+##            15 - 64세:18   Mean   :2019-11-16   Mean   : 4.933  
+##            20 - 29세:18   3rd Qu.:2020-01-01   3rd Qu.: 7.300  
+##            30 - 39세:18   Max.   :2020-02-01   Max.   :12.000  
+##            (Other)  :72
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{tail}\NormalTok{(df_select)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     성별 연령계층별 year_month value
+## 175 여자  40 - 49세 2020-02-01   2.5
+## 176 여자  50 - 59세 2020-02-01   2.7
+## 177 여자   60세이상 2020-02-01   4.8
+## 178 여자  15 - 64세 2020-02-01   4.0
+## 179 여자  15 - 24세 2020-02-01  11.0
+## 180 여자  15 - 29세 2020-02-01   8.4
+\end{verbatim}
+
+\hypertarget{interpretation}{%
+\section{Interpretation}\label{interpretation}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df_cleaned =}\StringTok{ }\NormalTok{df_select}
+\KeywordTok{colnames}\NormalTok{(df_cleaned) =}\StringTok{ }\KeywordTok{c}\NormalTok{(}\StringTok{"sex"}\NormalTok{, }\StringTok{"age_group"}\NormalTok{, }\StringTok{"year_month"}\NormalTok{, }\StringTok{"value"}\NormalTok{)}
+\KeywordTok{levels}\NormalTok{(df_cleaned}\OperatorTok{$}\NormalTok{sex)[}\DecValTok{1}\NormalTok{]=}\StringTok{"Total"}
+\KeywordTok{levels}\NormalTok{(df_cleaned}\OperatorTok{$}\NormalTok{sex)[}\DecValTok{2}\NormalTok{]=}\StringTok{"Male"}
+\KeywordTok{levels}\NormalTok{(df_cleaned}\OperatorTok{$}\NormalTok{sex)[}\DecValTok{3}\NormalTok{]=}\StringTok{"Female"}
+\KeywordTok{levels}\NormalTok{(df_cleaned}\OperatorTok{$}\NormalTok{age_group)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##  [1] "15 - 19세" "15 - 24세" "15 - 29세" "15 - 64세" "20 - 29세" "30 - 39세"
+##  [7] "40 - 49세" "50 - 59세" "60세이상"  "계"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df_cleaned}\OperatorTok{$}\NormalTok{new_age_group =}\StringTok{ }\KeywordTok{gsub}\NormalTok{(}\StringTok{"세|이상"}\NormalTok{, }\StringTok{""}\NormalTok{, df_cleaned}\OperatorTok{$}\NormalTok{age_group)}
+\NormalTok{df_cleaned}\OperatorTok{$}\NormalTok{new_age_group =}\StringTok{ }\KeywordTok{gsub}\NormalTok{(}\StringTok{"계"}\NormalTok{, }\StringTok{"Total"}\NormalTok{, df_cleaned}\OperatorTok{$}\NormalTok{new_age_group)}
+\NormalTok{df_final =}\StringTok{ }\NormalTok{df_cleaned[,}\KeywordTok{c}\NormalTok{(}\StringTok{"sex"}\NormalTok{,}\StringTok{"new_age_group"}\NormalTok{,}\StringTok{"year_month"}\NormalTok{,}\StringTok{"value"}\NormalTok{)]}
+\KeywordTok{head}\NormalTok{(df_final)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##     sex new_age_group year_month value
+## 1 Total         Total 2019-09-01   3.1
+## 2 Total       15 - 19 2019-09-01   5.9
+## 3 Total       20 - 29 2019-09-01   7.4
+## 4 Total       30 - 39 2019-09-01   2.8
+## 5 Total       40 - 49 2019-09-01   2.2
+## 6 Total       50 - 59 2019-09-01   2.3
+\end{verbatim}
+
+\hypertarget{uxcd5cuxc885-uxb370uxc774uxd130_uxc804uxccb4-uxc5f0uxb839}{%
+\section{최종 데이터\_전체
+연령}\label{uxcd5cuxc885-uxb370uxc774uxd130_uxc804uxccb4-uxc5f0uxb839}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ggplot}\NormalTok{(df_final, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\NormalTok{year_month, }\DataTypeTok{y=}\NormalTok{value, }\DataTypeTok{group=}\NormalTok{sex,}\DataTypeTok{colour=}\NormalTok{sex)) }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_point}\NormalTok{() }\OperatorTok{+}\StringTok{ }\KeywordTok{geom_line}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{unemployment_rate_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+\hypertarget{uxcd5cuxc885-uxb370uxc774uxd1302_2059}{%
+\section{최종
+데이터2\_20\textasciitilde{}59}\label{uxcd5cuxc885-uxb370uxc774uxd1302_2059}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df_20s =}\StringTok{ }\NormalTok{df_final[}\KeywordTok{which}\NormalTok{(df_final}\OperatorTok{$}\NormalTok{new_age_group}\OperatorTok{==}\StringTok{"20 - 29"}\NormalTok{),]}
+\NormalTok{df_30s =}\StringTok{ }\NormalTok{df_final[}\KeywordTok{which}\NormalTok{(df_final}\OperatorTok{$}\NormalTok{new_age_group}\OperatorTok{==}\StringTok{"30 - 39"}\NormalTok{),]}
+\NormalTok{df_40s =}\StringTok{ }\NormalTok{df_final[}\KeywordTok{which}\NormalTok{(df_final}\OperatorTok{$}\NormalTok{new_age_group}\OperatorTok{==}\StringTok{"40 - 49"}\NormalTok{),]}
+\NormalTok{df_50s =}\StringTok{ }\NormalTok{df_final[}\KeywordTok{which}\NormalTok{(df_final}\OperatorTok{$}\NormalTok{new_age_group}\OperatorTok{==}\StringTok{"50 - 59"}\NormalTok{),]}
+
+\NormalTok{plotF <-}\StringTok{ }\ControlFlowTok{function}\NormalTok{(df, title)\{}
+  \KeywordTok{ggplot}\NormalTok{(df, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\NormalTok{year_month, }\DataTypeTok{y=}\NormalTok{value,}\DataTypeTok{group=}\NormalTok{sex,}\DataTypeTok{colour=}\NormalTok{sex))}\OperatorTok{+}
+\StringTok{    }\KeywordTok{geom_point}\NormalTok{()}\OperatorTok{+}\KeywordTok{geom_line}\NormalTok{()}\OperatorTok{+}\KeywordTok{ggtitle}\NormalTok{(title)}
+\NormalTok{\}}
+
+\KeywordTok{plotF}\NormalTok{(df_20s,}\StringTok{"20-29"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{unemployment_rate_files/figure-latex/unnamed-chunk-6-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plotF}\NormalTok{(df_30s,}\StringTok{"30-39"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{unemployment_rate_files/figure-latex/unnamed-chunk-6-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plotF}\NormalTok{(df_40s,}\StringTok{"40-49"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{unemployment_rate_files/figure-latex/unnamed-chunk-6-3.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{plotF}\NormalTok{(df_50s,}\StringTok{"50-59"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{unemployment_rate_files/figure-latex/unnamed-chunk-6-4.pdf}
+
+\end{document}

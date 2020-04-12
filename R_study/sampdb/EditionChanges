@@ -1,0 +1,106 @@
+Summary of changes
+
+----------
+Fifth Edition
+
+Added Barack H. Obama to president.txt as 44th president.
+
+ch07 discusses prepared CALL and OUT/INOUT parameter support.
+
+ch07 no longer discusses embedded server. (The sample .c program
+embapp.c is still included in the capi directory.)
+
+----------
+Fourth Edition
+
+capi directory:
+
+Renamed stmt_exec, stmt_exec_ssl, stmt_exec_multi to exec_stmt,
+exec_stmt_ssl, exec_stmt_multi.
+
+phpapi directory:
+
+PHP scripts now use PDO rather than PEAR DB.
+
+----------
+Third Edition
+
+Example table changes:
+
+score, student, and absence tables now are InnoDB tables.
+event is renamed to grade_event, its type column now is named category,
+and the table is an InnoDB table.  (These are InnoDB tables now because
+InnoDB is sufficiently prevalent that it makes sense to use these tables
+to demonstrate foreign key constraints and transactions.)
+
+If your version of MySQL is older and complains about "ENGINE" in the
+CREATE TABLE statements, substitute the keyword "TYPE".  If you don't
+have InnoDB, you can create the tables as MyISAM tables, but the foreign
+key and transaction examples won't work.
+
+capi directory:
+
+Error-reporting code in C programs now prints mysql_sqlstate() value
+in addition to the mysql_error() and mysql_errno() values.
+
+Combined the old client1 and client2 into connect1, renamed
+client3 to connect2, renamed client4 to stmt_exec, renamed sslclient
+to stmt_exec_ssl.
+
+Removed capi/misc/map.c because the workarounds are for client libraries
+that go back before 4.0. You couldn't possibly be using a client library
+that old if you are using the option-processing routines shown in this
+book, which require at least MySQL 4.0.2.  The file is still available
+in 2nd Edition sampdb distribution.
+
+handle_one_option(), print_error() now static.
+
+SSL key/cert files now have expiration of 10 years, not 1 year.
+That way, I shouldn't have to replace them.
+
+phpapi directory:
+
+PHP scripts now use PEAR DB rather than low-level mysql_xxx() functions.
+
+----------
+Second Edition
+
+This file lists changes made to the sampdb distribution that accompanies
+MySQL, second edition, in comparison to the samp_db distribution that
+accompanies MySQL, first edition.
+
+2002-09-03
+- First edition created member table without the member_id column initially,
+  then showed how to add it later using ALTER TABLE.  This was a problem
+  for readers who didn't notice where the member_id column was added, because
+  later chapters assume the column is there.  Now the table is created with
+  the member_id column from the start.
+
+2002-06-15
+- No SQL statements assume that INTO is optional after INSERT any more.
+  (Better portability to non-MySQL engines.)
+
+2002-06-10
+- Missing email addresses in member table are now stored as NULL values,
+  not as empty strings.  Advanced expiration dates by three years.
+
+2002-01-20
+- Added George W. Bush to president.txt as 43rd president.  Changed middle
+  initial of George Bush (Sr.) from W. to H.W. and corrected birthday from
+  1924-06-24 to 1924-06-12. (There are 43 presidents, but only 42 records,
+  because Grover Cleveland was the 22nd and 24th president -- that is,
+  president twice for non-contiguous terms.)
+
+2000-04-06
+- Added comments to derive_member_pass.sql showing how to work around lack of
+  the MD5() function if your version of MySQL is older than 3.23.2.
+
+2000-03-03
+- Change to perlapi/gen_dir.  The switchbox code for determining the output
+  format type did not match what is in the book (page 311).  The code was
+  changed for the book to a more efficent method suggested by Monty, but
+  the change hadn't been folded back into the original source.
+
+2000-02-12
+- Fixed problem in phpapi/gp/score_entry.php: changed $addslashes()
+  to addslashes().

@@ -1,0 +1,43 @@
+Washington	George	\N	Wakefield	VA	1732-02-22	1799-12-14
+Adams	John	\N	Braintree	MA	1735-10-30	1826-07-04
+Jefferson	Thomas	\N	Albemarle County	VA	1743-04-13	1826-07-04
+Madison	James	\N	Port Conway	VA	1751-03-16	1836-06-28
+Monroe	James	\N	Westmoreland County	VA	1758-04-28	1831-07-04
+Adams	John Quincy	\N	Braintree	MA	1767-07-11	1848-02-23
+Jackson	Andrew	\N	Waxhaw settlement	SC	1767-03-15	1845-06-08
+Van Buren	Martin	\N	Kinderhook	NY	1782-12-05	1862-07-24
+Harrison	William H.	\N	Berkeley	VA	1773-02-09	1841-04-04
+Tyler	John	\N	Greenway	VA	1790-03-29	1862-01-18
+Polk	James K.	\N	Pineville	NC	1795-11-02	1849-06-15
+Taylor	Zachary	\N	Orange County	VA	1784-11-24	1850-07-09
+Fillmore	Millard	\N	Locke	NY	1800-01-07	1874-03-08
+Pierce	Franklin	\N	Hillsboro	NH	1804-11-23	1869-10-08
+Buchanan	James	\N	Mercersburg	PA	1791-04-23	1868-06-01
+Lincoln	Abraham	\N	Hodgenville	KY	1809-02-12	1865-04-15
+Johnson	Andrew	\N	Raleigh	NC	1808-12-29	1875-07-31
+Grant	Ulysses S.	\N	Point Pleasant	OH	1822-04-27	1885-07-23
+Hayes	Rutherford B.	\N	Delaware	OH	1822-10-04	1893-01-17
+Garfield	James A.	\N	Orange	OH	1831-11-19	1881-09-19
+Arthur	Chester A.	\N	Fairfield	VT	1829-10-05	1886-11-18
+Cleveland	Grover	\N	Caldwell	NJ	1837-03-18	1908-06-24
+Harrison	Benjamin	\N	North Bend	OH	1833-08-20	1901-03-13
+McKinley	William	\N	Niles	OH	1843-01-29	1901-09-14
+Roosevelt	Theodore	\N	New York	NY	1858-10-27	1919-01-06
+Taft	William H.	\N	Cincinnati	OH	1857-09-15	1930-03-08
+Wilson	Woodrow	\N	Staunton	VA	1856-12-19	1924-02-03
+Harding	Warren G.	\N	Blooming Grove	OH	1865-11-02	1923-08-02
+Coolidge	Calvin	\N	Plymouth Notch	VT	1872-07-04	1933-01-05
+Hoover	Herbert C.	\N	West Branch	IA	1874-08-10	1964-10-20
+Roosevelt	Franklin D.	\N	Hyde Park	NY	1882-01-30	1945-04-12
+Truman	Harry S	\N	Lamar	MO	1884-05-08	1972-12-26
+Eisenhower	Dwight D.	\N	Denison	TX	1890-10-14	1969-03-28
+Kennedy	John F.	\N	Brookline	MA	1917-05-29	1963-11-22
+Johnson	Lyndon B.	\N	Stonewall	TX	1908-08-27	1973-01-22
+Nixon	Richard M.	\N	Yorba Linda	CA	1913-01-09	1994-04-22
+Ford	Gerald R.	\N	Omaha	NE	1913-07-14	2006-12-26
+Carter	James E.	Jr.	Plains	GA	1924-10-01	\N
+Reagan	Ronald W.	\N	Tampico	IL	1911-02-06	2004-06-05
+Bush	George H.W.	\N	Milton	MA	1924-06-12	\N
+Clinton	William J.	\N	Hope	AR	1946-08-19	\N
+Bush	George W.	\N	New Haven	CT	1946-07-06	\N
+Obama	Barack H.	\N	Honolulu	HI	1961-08-04	\N

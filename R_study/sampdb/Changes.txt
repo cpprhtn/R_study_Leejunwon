@@ -1,0 +1,11 @@
+Change log for MySQL, Fifth Edition sampdb distribution
+
+   This file lists changes to the sampdb distribution that
+   accompanies MySQL, Fifth Edition. Changes are listed in
+   reverse chronological order.
+
+   Downloads are available at:
+   http://www.kitebird.com/mysql-book.
+
+   Version 1.00 (2013-04-06)
+     * Initial release.

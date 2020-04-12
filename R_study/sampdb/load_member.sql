@@ -1,0 +1,1 @@
+LOAD DATA LOCAL INFILE "member.txt" INTO TABLE member;

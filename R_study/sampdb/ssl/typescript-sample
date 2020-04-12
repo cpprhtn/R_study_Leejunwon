@@ -1,0 +1,180 @@
+Here is an example of the output you should expect to see when you
+run the sslcmds.sh command.  For the prompts, the responses shown are
+those used to generate the keys/certificates included in the sampdb
+distribution.
+
+% sh sslcmds.sh
+--- STEP 1. ---
+This step generates the Certificate Authority (CA) key and certificate
+files, ca-key.pem and ca-cert.pem.
+
+When prompted for a passphrase, supply your CA passphrase (twice).
+
+Generating a 1024 bit RSA private key
+.........++++++
+..................++++++
+writing new private key to 'ca-key.pem'
+Enter PEM pass phrase:capass
+
+Verifying - Enter PEM pass phrase:capass
+
+-----
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [US]:US
+State or Province Name (full name) [WI]:WI
+Locality Name (eg, city) [Madison]:Madison
+Organization Name (eg, company) [sampdb]:sampdb
+Organizational Unit Name (eg, section) []:CA
+Common Name (eg, your name or your server's hostname) [sampdb]:sampdb
+Email Address []:
+
+--- STEP 2. ---
+This step generates the server key and signing request files,
+server-key.pem and server-req.pem.
+
+When prompted for a passphrase, supply your server passphrase (twice).
+When prompted for an Organizational Unit Name, enter "server".
+
+Generating a 1024 bit RSA private key
+.....++++++
+........++++++
+writing new private key to 'server-key.pem'
+Enter PEM pass phrase:serverpass
+
+Verifying - Enter PEM pass phrase:serverpass
+
+-----
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [US]:US
+State or Province Name (full name) [WI]:WI
+Locality Name (eg, city) [Madison]:Madison
+Organization Name (eg, company) [sampdb]:sampdb
+Organizational Unit Name (eg, section) []:server
+Common Name (eg, your name or your server's hostname) [sampdb]:sampdb
+Email Address []:
+
+Please enter the following 'extra' attributes
+to be sent with your certificate request
+A challenge password []:
+An optional company name []:
+
+--- STEP 3. ---
+This step removes the passphrase from the server key file, leaving the
+original file in server-key.pem.orig.
+
+When prompted for a passphrase, supply your server passphrase.
+
+Enter pass phrase for server-key.pem.orig:
+writing RSA key
+
+--- STEP 4. ---
+This step signs the server certificate file, server-cert.pem.
+
+When prompted for a passphrase, supply your CA passphrase.
+When prompted whether to sign the certificate, enter "y".
+When prompted whether to commit, enter "y".
+
+Using configuration from ./sampdb.cnf
+Enter pass phrase for ca-key.pem:capass
+
+Check that the request matches the signature
+Signature ok
+The Subject's Distinguished Name is as follows
+countryName           :PRINTABLE:'US'
+stateOrProvinceName   :PRINTABLE:'WI'
+localityName          :PRINTABLE:'Madison'
+organizationName      :PRINTABLE:'sampdb'
+organizationalUnitName:PRINTABLE:'server'
+commonName            :PRINTABLE:'sampdb'
+Certificate is to be certified until Aug 26 21:38:32 2014 GMT (3650 days)
+Sign the certificate? [y/n]:y
+
+
+1 out of 1 certificate requests certified, commit? [y/n]y
+Write out database with 1 new entries
+Data Base Updated
+
+--- STEP 5. ---
+This step generates the client key and signing request files,
+client-key.pem and client-req.pem.
+
+When prompted for a passphrase, supply your client passphrase (twice).
+When prompted for an Organizational Unit Name, enter "client".
+
+Generating a 1024 bit RSA private key
+....++++++
+....................++++++
+writing new private key to 'client-key.pem'
+Enter PEM pass phrase:clientpass
+
+Verifying - Enter PEM pass phrase:clientpass
+
+-----
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [US]:US
+State or Province Name (full name) [WI]:WI
+Locality Name (eg, city) [Madison]:Madison
+Organization Name (eg, company) [sampdb]:sampdb
+Organizational Unit Name (eg, section) []:client
+Common Name (eg, your name or your server's hostname) [sampdb]:sampdb
+Email Address []:
+
+Please enter the following 'extra' attributes
+to be sent with your certificate request
+A challenge password []:
+An optional company name []:
+
+--- STEP 6. ---
+This step removes the passphrase from the client key file, leaving the
+original file in client-key.pem.orig.
+
+When prompted for a passphrase, supply your client passphrase.
+
+Enter pass phrase for client-key.pem.orig:clientpass
+
+writing RSA key
+
+--- STEP 7. ---
+This step signs the client certificate file, client-cert.pem.
+
+When prompted for a passphrase, supply your CA passphrase.
+When prompted whether to sign the certificate, enter "y".
+When prompted whether to commit, enter "y".
+
+Using configuration from ./sampdb.cnf
+Enter pass phrase for ca-key.pem:capass
+
+Check that the request matches the signature
+Signature ok
+The Subject's Distinguished Name is as follows
+countryName           :PRINTABLE:'US'
+stateOrProvinceName   :PRINTABLE:'WI'
+localityName          :PRINTABLE:'Madison'
+organizationName      :PRINTABLE:'sampdb'
+organizationalUnitName:PRINTABLE:'client'
+commonName            :PRINTABLE:'sampdb'
+Certificate is to be certified until Aug 26 21:38:34 2014 GMT (3650 days)
+Sign the certificate? [y/n]:y
+
+
+1 out of 1 certificate requests certified, commit? [y/n]y
+Write out database with 1 new entries
+Data Base Updated

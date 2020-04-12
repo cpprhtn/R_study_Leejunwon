@@ -1,0 +1,34 @@
+---
+title: "matrix practice"
+author: "Junwon Lee"
+date: "3/22/2020"
+output: html_document
+---
+Now we are going to practice matrix functions!!!
+```{r setup, include=FALSE}
+A = matrix(c(1,-1,2,0,3,4), nrow=2, byrow = FALSE)
+A
+B = array(1:3, c(2,3))
+B
+is.matrix(A)
+is.matrix(B)
+A*B
+t(B)
+A %*% t(B)
+A==B
+```
+
+## R Markdown
+
+
+```{r}
+A = matrix(c(1,-1,2,0,3,4), nrow=2, byrow = FALSE)
+A
+B = array(1:3, c(2,3))
+B
+is.matrix(A)
+is.matrix(B)
+A*B
+t(B)
+A %*% t(B)
+```
