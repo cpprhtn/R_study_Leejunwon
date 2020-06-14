@@ -25,13 +25,13 @@ hadoop
 
 R_공부_기록순서
 
-demo_length
-type
-sum_mean
-which
-data_frame
-read_table,csv <- lung.txt
-ceiling_runif
+0. demo_length
+1. type
+2. sum_mean
+3. which
+4. data_frame
+5. read_table,csv <- lung.txt
+6. ceiling_runif
 ceiling_runif_example
 tidyr_data_sort_데이터 정리
 character_string
